@@ -300,6 +300,7 @@ class OmekaAPIClient(object):
             property_value['value_resource_name'] = 'items'
         elif data_type in ['uri', 'valuesuggest:lc:iso6392', 'rights_statement']:
             property_value['@id'] = value['value']
+            property_value['o:label'] = value.get('label') # label is optional
         else:
             property_value['@value'] = value['value']
         return property_value
